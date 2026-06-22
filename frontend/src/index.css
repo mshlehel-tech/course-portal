@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f8f9fa;
+    color: #212529;
+    overflow-x: hidden;
+}
+
+/* Обов'язкове вирівнювання тексту по ширині відповідно до вимог */
+.text-justify {
+    text-align: justify;
+}
+
+/* КРИТИЧНЕ ВИПРАВЛЕННЯ: Повне знищення застряглого чорного фону Bootstrap */
+.modal-backdrop,
+.modal-backdrop.fade.show,
+.modal-backdrop.show {
+    display: none !important;
+    position: static !important;
+    width: 0 !important;
+    height: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+/* Плавний ефект появи сторінок */
+.fade-in-page {
+    animation: fadeInPageAnimation 0.5s ease-out both;
+}
+
+@keyframes fadeInPageAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Плавна каскадна поява карток */
+.animate-card-item {
+    opacity: 0;
+    animation: fadeInCardAnimation 0.4s ease-out forwards;
+}
+
+@keyframes fadeInCardAnimation {
+    from {
+        opacity: 0;
+        transform: scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Hover-ефект для карток курсів */
+.custom-card-style {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+    .custom-card-style:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06) !important;
+    }
+
+.navbar .container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
+    .card {
+        padding: 12px !important;
+    }
+
+    iframe {
+        min-height: 280px !important;
+    }
+}
