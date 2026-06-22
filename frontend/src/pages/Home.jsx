@@ -91,7 +91,7 @@ function Home() {
     };
 
     useEffect(() => {
-        fetch('http://localhost:5000/api/courses/popular')
+        fetch('https://course-portal-backend-uo2f.onrender.com/api/courses/popular')
             .then(res => res.json())
             .then(data => {
                 setCourses(data);
